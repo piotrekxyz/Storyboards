@@ -2,11 +2,131 @@
 		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:presentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options" 
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		mc:Ignorable="d"
 		Title="MainWindow" Height="450" Width="800">
 
+	<Window.Resources>
+		<PathGeometry x:Key="AnimationPath"
+	              Figures="M 10,100 C 35,0 135,0 160,100 180,190 285,200 310,100"
+	              presentationOptions:Freeze="False" />
+
+		<PathGeometry x:Key="Antenna0"
+		              Figures="m 111.8457,42.326172 c -14.239997,0 -25.826169,11.585219 -25.826169,25.824219 0,9.424 5.075766,17.681406 12.634766,22.191406 L 66.935547,223.68945 c 30.215298,-1e-5 62.458083,0 89.818363,0 L 125.03516,90.341797 c 7.559,-4.511 12.63476,-12.767406 12.63476,-22.191406 0,-14.239 -11.58422,-25.824219 -25.82422,-25.824219 z"
+		              presentationOptions:Freeze="False" />
+
+		<PathGeometry x:Key="Antenna1"
+		              Figures="m 61.080078,24.814453 c -11.575,11.576 -17.949219,26.965938 -17.949219,43.335938 0,16.37 6.373219,31.76189 17.949219,43.337889 L 75.222656,97.345703 c -7.799,-7.798 -12.091797,-18.167312 -12.091797,-29.195312 0,-11.028 4.293797,-21.396313 12.091797,-29.195313 L 61.080078,24.814453 Z m 101.527342,0 -14.14258,14.142578 c 7.798,7.798 12.09375,18.16536 12.09375,29.19336 0,11.028 -4.29575,21.397312 -12.09375,29.195312 l 14.14258,14.142577 c 11.575,-11.575999 17.95117,-26.965936 17.95117,-43.335936 0,-16.37 -6.37617,-31.761891 -17.95117,-43.337891 z M 111.8457,42.326172 c -14.239997,0 -25.826169,11.585219 -25.826169,25.824219 0,9.424 5.075766,17.681406 12.634766,22.191406 L 66.935547,223.68945 c 30.215298,-1e-5 62.458083,0 89.818363,0 L 125.03516,90.341797 c 7.559,-4.511 12.63476,-12.767406 12.63476,-22.191406 0,-14.239 -11.58422,-25.824219 -25.82422,-25.824219 z"
+		              presentationOptions:Freeze="False" />
+
+		<PathGeometry x:Key="Antenna2"
+		              Figures="M 36.267578 0 C 18.064578 18.204 8.0390625 42.406391 8.0390625 68.150391 C 8.0390625 93.895391 18.064578 118.09873 36.267578 136.30273 L 50.410156 122.16016 C 35.984156 107.73416 28.039062 88.552391 28.039062 68.150391 C 28.039062 47.748391 35.983156 28.567578 50.410156 14.142578 L 36.267578 0 z M 187.42188 0 L 173.2793 14.142578 C 187.7053 28.568578 195.65039 47.748391 195.65039 68.150391 C 195.65039 88.553391 187.7053 107.73416 173.2793 122.16016 L 187.42188 136.30273 C 205.62588 118.09873 215.65039 93.895391 215.65039 68.150391 C 215.65039 42.406391 205.62487 18.204 187.42188 0 z M 61.080078 24.814453 C 49.505078 36.390453 43.130859 51.780391 43.130859 68.150391 C 43.130859 84.520391 49.504078 99.912282 61.080078 111.48828 L 75.222656 97.345703 C 67.423656 89.547703 63.130859 79.178391 63.130859 68.150391 C 63.130859 57.122391 67.424656 46.754078 75.222656 38.955078 L 61.080078 24.814453 z M 162.60742 24.814453 L 148.46484 38.957031 C 156.26284 46.755031 160.55859 57.122391 160.55859 68.150391 C 160.55859 79.178391 156.26284 89.547703 148.46484 97.345703 L 162.60742 111.48828 C 174.18242 99.912282 180.55859 84.522344 180.55859 68.152344 C 180.55859 51.782344 174.18242 36.390453 162.60742 24.814453 z M 111.8457 42.326172 C 97.605706 42.326172 86.019531 53.911391 86.019531 68.150391 C 86.019531 77.574391 91.095297 85.831797 98.654297 90.341797 L 66.935547 223.68945 L 156.75391 223.68945 L 125.03516 90.341797 C 132.59416 85.830797 137.66992 77.574391 137.66992 68.150391 C 137.66992 53.911391 126.0857 42.326172 111.8457 42.326172 z"
+		              presentationOptions:Freeze="False" />
+	</Window.Resources>
+
 	<Grid>
+
+		<Canvas Margin="0">
+			<Path Width="100" Height="100" Canvas.Left="15" Canvas.Top="15" Stretch="Fill" Fill="Black" Data="{StaticResource Antenna0}"/>
+		</Canvas>
+
+		<Canvas Margin="150,0,0,0">
+			<Path Width="100" Height="100" Canvas.Left="15" Canvas.Top="15" Stretch="Fill" Fill="Black" Data="{StaticResource Antenna1}"/>
+		</Canvas>
+
+		<Canvas Margin="300,0,0,0">
+			<Path Width="100" Height="100" Canvas.Left="15" Canvas.Top="15" Stretch="Fill" Fill="Black" Data="{StaticResource Antenna2}"/>
+		</Canvas>
+
+
+
+		<!--<Canvas Margin="500,0,0,0">
+			<Path Width="100" Height="100" Canvas.Left="15" Canvas.Top="15" Stretch="Fill" Fill="Black" 
+			      Data="m 111.8457,42.326172 c -14.239997,0 -25.826169,11.585219 -25.826169,25.824219 0,9.424 5.075766,17.681406 12.634766,22.191406 L 66.935547,223.68945 c 30.215298,-1e-5 62.458083,0 89.818363,0 L 125.03516,90.341797 c 7.559,-4.511 12.63476,-12.767406 12.63476,-22.191406 0,-14.239 -11.58422,-25.824219 -25.82422,-25.824219 z">
+				<Path.Triggers>
+					<EventTrigger RoutedEvent="Path.Loaded">
+						<BeginStoryboard>
+							<Storyboard>
+								<PointAnimationUsingPath Storyboard.TargetProperty=""/>
+							</Storyboard>
+						</BeginStoryboard>
+					</EventTrigger>
+				</Path.Triggers>
+			</Path>
+		</Canvas>-->
+
+		<!--<Canvas Margin="500,0,0,0">
+			<Canvas.Triggers>
+				<EventTrigger RoutedEvent="Canvas.Loaded">
+					<BeginStoryboard>
+						<Storyboard RepeatBehavior="Forever">
+							<PointAnimationUsingPath Storyboard.TargetProperty="">
+								<PointAnimationUsingPath.PathGeometry>
+									<PathGeometry Figures="M 10,100 C 35,0 135,0 160,100 180,190 285,200 310,100"
+									              presentationOptions:Freeze="True" />
+								</PointAnimationUsingPath.PathGeometry>
+								-->
+		<!--<Path Data="{StaticResource Antenna0}"></Path>-->
+		<!--
+							</PointAnimationUsingPath>
+							-->
+		<!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Path" Duration="0:0:0">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0.0">
+									<DiscreteObjectKeyFrame.Value>
+										<Path />
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>-->
+		<!--
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+			</Canvas.Triggers>
+			<Path Width="100" Height="100" Canvas.Left="15" Canvas.Top="15" Stretch="Fill" Fill="Black" 
+			      Data="m 111.8457,42.326172 c -14.239997,0 -25.826169,11.585219 -25.826169,25.824219 0,9.424 5.075766,17.681406 12.634766,22.191406 L 66.935547,223.68945 c 30.215298,-1e-5 62.458083,0 89.818363,0 L 125.03516,90.341797 c 7.559,-4.511 12.63476,-12.767406 12.63476,-22.191406 0,-14.239 -11.58422,-25.824219 -25.82422,-25.824219 z">
+			</Path>
+		</Canvas>-->
+
+		<!--<Canvas Margin="500,0,0,0">
+			<Path Width="100" Height="100" Canvas.Left="15" Canvas.Top="15" Stretch="Fill" Fill="Black" 
+			      Data="{StaticResource AnimationPath}">
+			</Path>
+		</Canvas>-->
+
+		<!--<Canvas Margin="500,0,0,0">
+			<Path Width="100" Height="100" Canvas.Left="15" Canvas.Top="15" Stretch="Fill" Fill="Black" Data="{StaticResource Antenna2}"/>
+			<Canvas.Triggers>
+				<EventTrigger RoutedEvent="Canvas.Loaded">
+					<EventTrigger.Actions>
+						<BeginStoryboard>
+							<Storyboard RepeatBehavior="Forever">
+								<ObjectAnimationUsingKeyFrames BeginTime="0"></ObjectAnimationUsingKeyFrames>
+								--><!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Path" Duration="0:0:2.5">
+									<DiscreteObjectKeyFrame KeyTime="0:0:0.0">
+										<DiscreteObjectKeyFrame.Value>
+											<Path  Data="M 10,100 C 35,0 135,0 160,100 180,190 285,200 310,100" />
+										</DiscreteObjectKeyFrame.Value>
+									</DiscreteObjectKeyFrame>
+								</ObjectAnimationUsingKeyFrames>-->
+								<!--<DoubleAnimationUsingPath Storyboard.TargetProperty="(Canvas.Path)"
+							                          PathGeometry="{StaticResource Antenna1}">
+
+								</DoubleAnimationUsingPath>-->
+								<!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="PathGeometry">
+								<DiscreteObjectKeyFrame KeyTime="0">
+									<DiscreteObjectKeyFrame.Value>
+										<PathGeometry Figures="M 10,100 C 35,0 135,0 160,100 180,190 285,200 310,100"/>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>--><!--
+							</Storyboard>
+						</BeginStoryboard>
+					</EventTrigger.Actions>
+				</EventTrigger>
+			</Canvas.Triggers>
+		</Canvas>-->
+
 		<Image HorizontalAlignment="Left" Height="100" Margin="300,200,0,0" VerticalAlignment="Top" Width="100" >
 			<Image.Triggers>
 				<EventTrigger RoutedEvent="Image.Loaded">
@@ -45,6 +165,8 @@
 			</Image.Triggers>
 		</Image>
 
+
+
 		<Ellipse x:Name="Ellipse1" HorizontalAlignment="Left" Height="20" Margin="380,280,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" RenderTransformOrigin="-5.742,8.918" >
 			<Ellipse.Fill>
 				<RadialGradientBrush GradientOrigin=".5,.8" RadiusX="0.6">
@@ -56,29 +178,29 @@
 			<Ellipse.Triggers>
 				<EventTrigger RoutedEvent="Ellipse.Loaded">
 					<!--<Trigger.EnterActions>-->
-						<BeginStoryboard Name="Pulse">
-							<Storyboard RepeatBehavior="Forever">
+					<BeginStoryboard Name="Pulse">
+						<Storyboard RepeatBehavior="Forever">
 
-								<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Ellipse1">
-									<EasingDoubleKeyFrame KeyTime="0:0:0" Value="10">
-										<EasingDoubleKeyFrame.EasingFunction>
-											<BackEase EasingMode="EaseOut" Amplitude="10"/>
-										</EasingDoubleKeyFrame.EasingFunction>
-									</EasingDoubleKeyFrame>
-									<EasingDoubleKeyFrame KeyTime="0:0:1" Value="20" />
-								</DoubleAnimationUsingKeyFrames>
+							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Ellipse1">
+								<EasingDoubleKeyFrame KeyTime="0:0:0" Value="10">
+									<EasingDoubleKeyFrame.EasingFunction>
+										<BackEase EasingMode="EaseOut" Amplitude="10"/>
+									</EasingDoubleKeyFrame.EasingFunction>
+								</EasingDoubleKeyFrame>
+								<EasingDoubleKeyFrame KeyTime="0:0:1" Value="20" />
+							</DoubleAnimationUsingKeyFrames>
 
-								<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="Ellipse1">
-									<EasingDoubleKeyFrame KeyTime="0:0:0" Value="10">
-										<EasingDoubleKeyFrame.EasingFunction>
-											<BackEase EasingMode="EaseOut" Amplitude="10"/>
-										</EasingDoubleKeyFrame.EasingFunction>
-									</EasingDoubleKeyFrame>
-									<EasingDoubleKeyFrame KeyTime="0:0:1" Value="20" />
-								</DoubleAnimationUsingKeyFrames>
+							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="Ellipse1">
+								<EasingDoubleKeyFrame KeyTime="0:0:0" Value="10">
+									<EasingDoubleKeyFrame.EasingFunction>
+										<BackEase EasingMode="EaseOut" Amplitude="10"/>
+									</EasingDoubleKeyFrame.EasingFunction>
+								</EasingDoubleKeyFrame>
+								<EasingDoubleKeyFrame KeyTime="0:0:1" Value="20" />
+							</DoubleAnimationUsingKeyFrames>
 
-							</Storyboard>
-						</BeginStoryboard>
+						</Storyboard>
+					</BeginStoryboard>
 					<!--</Trigger.EnterActions>-->
 					<!--<Trigger.ExitActions>
 						<StopStoryboard BeginStoryboardName="Pulse"/>

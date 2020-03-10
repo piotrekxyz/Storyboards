@@ -1,0 +1,91 @@
+﻿<Window x:Class="Obrazki.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d"
+		Title="MainWindow" Height="450" Width="800">
+
+	<Grid>
+		<Image HorizontalAlignment="Left" Height="100" Margin="300,200,0,0" VerticalAlignment="Top" Width="100" >
+			<Image.Triggers>
+				<EventTrigger RoutedEvent="Image.Loaded">
+					<BeginStoryboard>
+						<Storyboard RepeatBehavior="Forever">
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source" Duration="0:0:2.5">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0.0">
+									<DiscreteObjectKeyFrame.Value>
+										<BitmapImage UriSource="./icons/Tinder_4550869.png"/>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+								<DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+									<DiscreteObjectKeyFrame.Value>
+										<BitmapImage UriSource="./icons/tinder_519182.png"/>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+								<DiscreteObjectKeyFrame KeyTime="0:0:1">
+									<DiscreteObjectKeyFrame.Value>
+										<BitmapImage UriSource="./icons/models_agency_512px_GREY_287510.png"/>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+								<DiscreteObjectKeyFrame KeyTime="0:0:1.5">
+									<DiscreteObjectKeyFrame.Value>
+										<BitmapImage UriSource="./icons/Blue_Dress_82275.png"/>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+								<DiscreteObjectKeyFrame KeyTime="0:0:2">
+									<DiscreteObjectKeyFrame.Value>
+										<BitmapImage UriSource="./icons/Red_Dress_82276.png"/>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+			</Image.Triggers>
+		</Image>
+
+		<Ellipse x:Name="Ellipse1" HorizontalAlignment="Left" Height="20" Margin="380,280,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" RenderTransformOrigin="-5.742,8.918" >
+			<Ellipse.Fill>
+				<RadialGradientBrush GradientOrigin=".5,.8" RadiusX="0.6">
+					<GradientStop Color="Red" Offset="1"/>
+					<GradientStop Color="Blue" Offset="0"/>
+				</RadialGradientBrush>
+			</Ellipse.Fill>
+
+			<Ellipse.Triggers>
+				<EventTrigger RoutedEvent="Ellipse.Loaded">
+					<!--<Trigger.EnterActions>-->
+						<BeginStoryboard Name="Pulse">
+							<Storyboard RepeatBehavior="Forever">
+
+								<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Ellipse1">
+									<EasingDoubleKeyFrame KeyTime="0:0:0" Value="10">
+										<EasingDoubleKeyFrame.EasingFunction>
+											<BackEase EasingMode="EaseOut" Amplitude="10"/>
+										</EasingDoubleKeyFrame.EasingFunction>
+									</EasingDoubleKeyFrame>
+									<EasingDoubleKeyFrame KeyTime="0:0:1" Value="20" />
+								</DoubleAnimationUsingKeyFrames>
+
+								<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="Ellipse1">
+									<EasingDoubleKeyFrame KeyTime="0:0:0" Value="10">
+										<EasingDoubleKeyFrame.EasingFunction>
+											<BackEase EasingMode="EaseOut" Amplitude="10"/>
+										</EasingDoubleKeyFrame.EasingFunction>
+									</EasingDoubleKeyFrame>
+									<EasingDoubleKeyFrame KeyTime="0:0:1" Value="20" />
+								</DoubleAnimationUsingKeyFrames>
+
+							</Storyboard>
+						</BeginStoryboard>
+					<!--</Trigger.EnterActions>-->
+					<!--<Trigger.ExitActions>
+						<StopStoryboard BeginStoryboardName="Pulse"/>
+					</Trigger.ExitActions>-->
+				</EventTrigger>
+			</Ellipse.Triggers>
+		</Ellipse>
+
+	</Grid>
+</Window>
